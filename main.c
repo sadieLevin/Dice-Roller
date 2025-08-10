@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //rand() generates random number, ought to be stored as int __variablename__ = rand();
 //input follows this pattern
@@ -12,13 +13,40 @@
 
 int main()
 {
+	printf("xdy for x of dice rolls y\nq to quit\n");
+	
+	char buff[100];
+	int n = 99; //buff will cut off at 99 characters
+	// At this point, strlen(buff) == 0.
+
+	// Read input from user
+	fgets(buff, n, stdin);
+	printf("You entered: %s\n", buff);
+
+	char arr[30];
+
+	//populates arr with statements as delineated by plus signs in buff
+	int start_index = 0;
+	int current_index = 0;
+	char working_string[100];
+
+	for(int i = 0; i < strlen(buff); i++)
+	{
+		printf("%c\n", buff[i]);
+	}
+
+
+
+
+/*
 	for (int i = 0; i < 100; i++) {
 	
 		int random_number = rand() % 9 + 1;
 		printf("%d ", random_number);
 	}
+*/
+
 	
 	//this lets the computer know it didn't royally mess up, I think??
 	return 0;
 }
-
