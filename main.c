@@ -15,24 +15,29 @@ int main()
 {
 	printf("xdy for x of dice rolls y\nq to quit\n");
 	
-	char buff[100];
-	int n = 99; //buff will cut off at 99 characters
-	// At this point, strlen(buff) == 0.
+	char input_buff[100];
+	int n = 99; //input_buff will cut off at 99 characters
+	// At this point, strlen(input_buff) == 0.
 
 	// Read input from user
-	fgets(buff, n, stdin);
-	printf("You entered: %s\n", buff);
+	fgets(input_buff, n, stdin);
+	printf("You entered: %s\n", input_buff);
 
-	char arr[30];
-
-	//populates arr with statements as delineated by plus signs in buff
+/*    POSSIBLE SOLUTION TO STRING HANDLING
+	//populates arr with statements as delineated by plus signs in input_buff
 	int start_index = 0;
 	int current_index = 0;
 	char working_string[100];
+*/
 
-	for(int i = 0; i < strlen(buff); i++)
+	//string parsing here! I need a malloc situation and some conditionals in this for loop to handle "d" phrases, "+" delimiters, and whitespace! Whitespace effectively caught!
+
+	//dice = malloc(sizeof(char* * len(input))); //courtesy of Cassidy Ureda for helping me through this one.
+	char dice_notation_buff[10];
+
+	for(int i = 0; i < strlen(input_buff); i++)
 	{
-		printf("%c\n", buff[i]);
+		printf("%c\n", input_buff[i]);
 	}
 
 
