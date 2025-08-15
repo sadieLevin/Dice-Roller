@@ -31,13 +31,23 @@ int main()
 */
 
 	//string parsing here! I need a malloc situation and some conditionals in this for loop to handle "d" phrases, "+" delimiters, and whitespace! Whitespace effectively caught!
-
+	
 	//dice = malloc(sizeof(char* * len(input))); //courtesy of Cassidy Ureda for helping me through this one.
 	char dice_notation_buff[10];
 
 	for(int i = 0; i < strlen(input_buff); i++)
 	{
-		printf("%c\n", input_buff[i]);
+		printf("%c ", input_buff[i]);
+		
+		if (input_buff[i] == '+')
+		{
+			printf("is an addition symbol, should lead to next phrase memory chunk");
+		}
+		else if (input_buff[i] == 'd')
+		{
+			printf("indicates the second half of a phrase, should indicate block 2 of a memory chunk");
+		}
+		printf("\n");
 	}
 
 
@@ -52,6 +62,6 @@ int main()
 */
 
 	
-	//this lets the computer know it didn't royally mess up, I think??
+	
 	return 0;
 }
